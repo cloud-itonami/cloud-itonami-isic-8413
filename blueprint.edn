@@ -1,0 +1,10 @@
+{:itonami.blueprint/id "cloud-itonami-isic-8413"
+ :itonami.blueprint/name "Economic Regulation and Business Compliance Administration"
+ :itonami.blueprint/isic-rev5 "8413"
+ :itonami.blueprint/domain :regulation/business-compliance
+ :itonami.blueprint/license "AGPL-3.0-or-later"
+ :itonami.blueprint/social-impact [:business-registration-transparency :regulatory-compliance-support :economic-data-integrity]
+ :itonami.blueprint/governor :regulation-governor
+ :itonami.blueprint/robotics true
+ :itonami.blueprint/required-technologies [:robotics :identity :forms :dmn :bpmn :audit-ledger]
+ :itonami.blueprint/status :public-oss}
