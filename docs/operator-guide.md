@@ -28,7 +28,7 @@ git clone https://github.com/cloud-itonami/cloud-itonami-isic-8413.git
 cd cloud-itonami-isic-8413
 
 # Test the default setup (in-memory store, mock advisor)
-clojure -M:test
+kbb -M:test
 
 # Run interactively (REPL)
 clojure
@@ -40,8 +40,8 @@ clojure
 FROM clojure:latest
 WORKDIR /app
 COPY . .
-RUN clojure -M:test
-CMD ["clojure", "-M:run"]
+RUN kbb -M:test
+CMD ["kbb", "-M:run"]
 ```
 
 ## Configuration

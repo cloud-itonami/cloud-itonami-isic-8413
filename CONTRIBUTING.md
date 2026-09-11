@@ -33,7 +33,7 @@ Any contribution that adds, enables, or proposes:
 2. Install [Clojure](https://clojure.org/) and the CLI tools.
 3. Run tests:
    ```bash
-   clojure -M:test
+   kbb -M:test
    ```
 
 ## Making a Contribution
@@ -41,7 +41,7 @@ Any contribution that adds, enables, or proposes:
 1. Fork the repository.
 2. Create a feature branch: `git checkout -b feature/your-feature`.
 3. Make your changes.
-4. Run tests and ensure they pass: `clojure -M:test`.
+4. Run tests and ensure they pass: `kbb -M:test`.
 5. Commit your changes with clear, descriptive messages.
 6. Push to your fork.
 7. Open a pull request to `main`.
@@ -51,7 +51,7 @@ Any contribution that adds, enables, or proposes:
 All changes must pass the test suite:
 
 ```bash
-clojure -M:test
+kbb -M:test
 ```
 
 If you add new functionality, please include tests.
