@@ -1,0 +1,35 @@
+;; What this vertical's robot physically does, declared for
+;; kotoba.robotics.process (kotoba-lang/robotics). `kbb -M:physics` runs it.
+;;
+;; README "Robotics premise": a document-handling and verification robot
+;; performs business registration verification, permit application intake,
+;; economic data collection and complaint escalation for an economic
+;; regulation and business-compliance office (ISIC 8413). The physical
+;; verification work declared here is a trade-scale check in a shop (legal
+;; metrology is economic regulation): wheeling the test-weight cart up the
+;; shop's entrance ramp, and placing test weights on the shop's scale.
+;;
+;; Every number without a cited source is marked `estimate` in its :basis.
+;; Replacing an estimate with a sourced value is this bot's growth work.
+{:physics/schema "itonami.physical-ai.spec.v1"
+ :repo "cloud-itonami/cloud-itonami-isic-8413"
+ :cases
+ [{:id :test-weight-onto-scale-platform
+   :kind :manipulator
+   :procedure "verification arm lifts a test weight from the weight case on the floor onto the platform of the shop's trade scale"
+   :params {:l1-m 0.60 :l2-m 0.50 :m1-kg 7.0 :m2-kg 4.5
+            :from [0.55 -0.45] :to [0.70 0.10] :duration-s 3.0 :steps 600}
+   :sweep {:param :payload-kg :values [1.0 2.0 5.0 10.0 20.0]}
+   :quantity :peak-tau1-nm
+   :limit {:max 160.0 :basis "estimate: continuous shoulder torque of a 15-20 kg payload class collaborative arm on the inspection cart"}
+   :boundary {:lo 0.5 :hi 40.0}}
+  {:id :test-weight-cart-up-shop-ramp
+   :kind :transport
+   :procedure "inspection robot wheels the cart of test weights 25 m from the vehicle up the shop's 1:12 entrance ramp to the scale"
+   :params {:mass-kg 50.0 :distance-m 25.0 :v-max-mps 0.8 :a-max-mps2 0.4
+            :brake-decel-mps2 0.8 :drive-force-n 200.0 :crr 0.02 :slope-deg 4.76
+            :cog-height-m 0.35 :support-half-length-m 0.30 :max-time-s 1800.0}
+   :sweep {:param :payload-kg :values [20.0 50.0 80.0 110.0 140.0]}
+   :quantity :cycle-time-s
+   :limit {:max 45.0 :basis "estimate: the shop's checkout is out of use while its scale is verified; the inspection plan allots 45 s per cart trip"}
+   :boundary {:lo 5.0 :hi 160.0}}]}
