@@ -20,7 +20,7 @@ Additionally, every proposal, verdict, and outcome must be logged to an immutabl
 
 ## Decision
 
-Implement the **itonami Blueprint Actor pattern** (per ADR-2607011000 / CLAUDE.md Actors section):
+Implement the **itonami Blueprint Actor pattern** (per ADR-2607011000 / AGENTS.md Actors section):
 
 ### Core Components
 
@@ -78,6 +78,6 @@ Implement the **itonami Blueprint Actor pattern** (per ADR-2607011000 / CLAUDE.m
 ## Related
 
 - ADR-2607011000: itonami Actor pattern definition.
-- CLAUDE.md: Actors section.
+- AGENTS.md: Actors section.
 - `blueprint.edn`: Formal specification (ISIC 8413, required capabilities, status).
 - cloud-itonami-isic-8422: Reference implementation for Defence Procurement (same architecture, different domain).
